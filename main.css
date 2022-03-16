@@ -36,8 +36,9 @@ h4 {
 h5 {
   font-size: 1em;
 }
-ul {
-  margin-bottom: 1.8rem;
+
+a, a:visited {
+  color: darkorange;
 }
 
 html, body, li, p {
@@ -94,7 +95,7 @@ ul li, p {
 }
 #shop-info .shop-info-left {
   float: left;
-  width: 55%;;
+  width: 50%;
 }
 #shop-info .prices table {
   width: 100%;
@@ -109,23 +110,63 @@ ul li, p {
   padding: .7rem 0 .2rem 0;
   border-bottom: 1px dotted;
 }
+
 #shop-info .shop-info-right {
   float: right;
-  width: 35%;
-}
-#shop-info .shop-info-right .contact {
-  padding-top: 1rem;
-}
-#shop-info .shop-info-right .contact .address {
-  margin-top: 1.5rem;
-  font-size: .9rem;
-}
-#shop-info .shop-info-right .contact .cvr {
-  font-size: .7rem;
+  width: 40%;
 }
 
-#gallery .container {
-  padding-top: 0;
+#shop-info .shop-info-right .booking .desc-info {
+  margin: .5rem 0;
+  font-size: .7rem;
+  width: 90%;
+}
+
+#shop-info .shop-info-right .online-booking {
+  margin: 1.2rem 0 2rem 0;
+  width: 80%;
+}
+#shop-info .shop-info-right .online-booking .notice {
+  display: block;
+  margin-top: .5rem;
+  color: rebeccapurple;
+  font-style: italic;
+  font-size: .6rem;
+  width: 90%;
+}
+#shop-info .shop-info-right .contact h4 {
+  font-size: 1rem;
+}
+#shop-info .shop-info-right .contact .address {
+  font-size: .85rem;
+}
+#shop-info .shop-info-right .contact .phone {
+  margin-top: .33rem;
+  font-size: .7rem;
+  margin-bottom: .6rem;
+}
+#shop-info .shop-info-right .contact .email, #shop-info .shop-info-right .contact .cvr {
+  margin-top: .33rem;
+  font-size: .6rem;
+  opacity: .5;
+}
+
+#shop-info .shop-info-right .social {
+  margin-top: 1.2rem;
+}
+#shop-info .shop-info-right .social li {
+  position: relative;
+  padding-left: 25px;
+}
+#shop-info .shop-info-right .social li img {
+  margin-left: -25px;
+  margin-top: 8px;
+  width: 15px;
+  position: absolute;
+}
+#shop-info .shop-info-right .social li.facebook a {
+  /* color: #0075fa; */
+  font-size: .6rem;
 }
 
 @media (min-width: 1200px) {
@@ -144,4 +185,21 @@ ul li, p {
   html, body {
     font-size: 24px;
   }
+}
+
+/* Booking button for onlinebooq */
+a.obq-button {
+  cursor: pointer;
+  background: darkorange;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: 500;
+  min-width: 200px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  border: 1px solid #f0a247;
 }

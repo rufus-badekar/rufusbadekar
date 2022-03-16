@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.5.3/lory.min.js"></script>
-    <script src="https://product-gallery.cloudinary.com/all.js" type="text/javascript"></script>      
+    <script src="https://product-gallery.cloudinary.com/all.js" type="text/javascript"></script>
+     <!-- needed for the onlinebooq widget (popup window) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js "></script>
+    <script id="obqScript" src="https://widget.onlinebooq.dk/widget/v2/onlinebooq-v2.js"></script>
+    <!-- // -->
+    <script>onlinebooq.init("loppetjansen","dk",{});</script>
   </head>
   <body>
     <div id="header">
@@ -33,120 +38,82 @@
         <div class="container">
           <div class="shop-info-left">
             <div class="prices">
-              <h4>Priser</h4>
-              <table>
-                <tr>
-                  <td><span>Dameklip</span></td>
-                  <td><span>390 kr</span></td>
-                </tr>
-                <tr>
-                  <td><span>Dameklip</span></td>
-                  <td><span>390 kr</span></td>
-                </tr>
-                <tr>
-                  <td><span>Dameklip</span></td>
-                  <td><span>390 kr</span></td>
-                </tr>
-                <tr>
-                  <td><span>Dameklip</span></td>
-                  <td><span>390 kr</span></td>
-                </tr>
-                <tr>
-                  <td><span>Dameklip</span></td>
-                  <td><span>390 kr</span></td>
-                </tr>
-                <tr>
-                  <td><span>Dameklip</span></td>
-                  <td><span>390 kr</span></td>
-                </tr>
-                <tr>
-                  <td><span>Dameklip</span></td>
-                  <td><span>390 kr</span></td>
-                </tr>
-                <tr>
-                  <td><span>Dameklip</span></td>
-                  <td><span>390 kr</span></td>
-                </tr>
-              </table>
+              <div id="gallery-widget" style="width:100%"></div>
+              <script type="text/javascript">  
+                var galleryWidget = cloudinary.galleryWidget({
+                  container: "#gallery-widget",
+                  cloudName: "rufus-badekar",
+                  loaderProps: {
+                    style: 'circle',
+                    color: '#FFFFFF',
+                    opacity: 0.3
+                  },
+                  themeProps: {
+                    primary: '#FFFFFF',
+                    onActive: "FFFFFF",
+                    onPrimary: 'FFFFFF',
+                    active: 'FFFFFF'
+                  },
+                  mediaAssets: [
+                    {
+                      tag: 'gallery',
+                      transformation: { 
+                        crop: "fill"
+                      }
+                    }
+                  ],
+                  aspectRatio: "1:1", // aspectRatio: "16:9", -- mobile landscape
+                  zoom: true,
+                  zoomProps: {
+                    type: 'popup'
+                  },
+                  displayProps: {
+                    mode: 'expanded',
+                    spacing: 10,
+                    columns: 2
+                  }
+                })
+                
+                galleryWidget.render();
+              </script>
             </div>
           </div>
           <div class="shop-info-right">
-            <div class="opening-hours">
-              <h4>Åbningstider</h4>
-              <ul>
-                <li><b>mandag - fredag:</b> 09:00 - 18:00</li>
-                <li><b>lørdag - søndag:</b> 11:00 - 16:00</li>
-              </ul>
+            <div class="booking">
+              <h4>Tidsbestilling</h4>
+              <div class="desc-info">
+                <p>
+                  <small>
+                    På <a href="https://www.onlinebooq.dk/priser.aspx" target="_blank">Bestil tid online</a> kan du finde priser samt bestille tid online.
+                    Tidsbestilling kan også foretages på telefon <i style="font-size: .65rem; font-style: italic; opacity: .6">+45 12 34 56 78</i>
+                  </small>
+                </p>
+              </div>
+              <div class="online-booking">
+                <a href class="obq-button">Bestil tid online</a>
+                <small class="notice">
+                  * Bemærk venligst at åbningstider forekommer efter aftale
+                </small>
+              </div>
             </div>
             <div class="contact">
-              <h4>Ring og book en tid</h4>
+              <h4>Kontakt</h4>
               <ul>
-                <li class="phone">+45 12 34 56 78</li>
                 <li class="address">Gyldenmosen 7, 4640 Faxe</li>
+                <li class="phone">+45 12 34 56 78</li>
+                <li class="email">Rufusbadekar@gmail.com</li>
                 <li class="cvr">CVR: 1234567898765</li>
               </ul>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- <div id="about">
-        <div class="container">
-          <div class="about-content">
-              <h3>Om salonen</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, harum eos sit voluptates quae, 
-                consequatur dignissimos obcaecati sint sed earum, quo perferendis dolorem suscipit 
-                voluptatum explicabo maxime atque temporibus qui!
-              </p>
-              <p>
-                Est asperiores illum numquam fugit possimus architecto, repellendus nemo soluta repudiandae ea, obcaecati excepturi velit dolore maiores omnis. 
-                Laboriosam, at et. Accusamus, deleniti perspiciatis! Debitis architecto dolorem exercitationem, cupiditate quam hic et aliquid, dicta dolore animi veritatis ad quaerat voluptatibus?
-              </p>
+            <div class="social">
+              <ul>
+                <li class="facebook">
+                  <img src="facebook-icon.webp" />
+                  <a href="https://facebook.com" target="_blank">Besøg Rufus Badekar på Facebook</a>
+                </li>
+              </ul>
             </div>
-        </div>
-      </div> -->
-
-      <div id="gallery">
-        <div class="container">
-          <div id="gallery-widget" style="width:900px;"></div>
-          <script type="text/javascript">  
-            var galleryWidget = cloudinary.galleryWidget({
-              container: "#gallery-widget",
-              cloudName: "rufus-badekar",
-              loaderProps: {
-                style: 'circle',
-                color: '#FFFFFF',
-                opacity: 0.3
-              },
-              themeProps: {
-                primary: '#FFFFFF',
-                onActive: "FFFFFF",
-                onPrimary: 'FFFFFF',
-                active: 'FFFFFF'
-              },
-              mediaAssets: [
-                {
-                  tag: 'gallery',
-                  transformation: { 
-                    crop: "fill"
-                  }
-                }
-              ],
-              aspectRatio: "1:1", // aspectRatio: "16:9", -- mobile landscape
-              zoom: true,
-              zoomProps: {
-                type: 'popup'
-              },
-              displayProps: {
-                mode: 'expanded',
-                spacing: 10,
-                columns: 6
-              }
-            })
-            
-            galleryWidget.render();
-          </script>
+          </div>
         </div>
       </div>
     </div>
